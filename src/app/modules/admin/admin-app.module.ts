@@ -10,6 +10,10 @@ import { AddProductComponent } from './product-management/add-product.component'
 import 'rxjs';
 import {AdminRoutingModule, adminRoutedComponents} from "./admin.routing";
 import {AdminService} from "./shared/admin.service";
+import {AdminAppHomeComponent} from "./admin-app-home.component";
+import { AdminSidebarComponent } from './shared/admin-sidebar.component';
+import {DropdownDirective} from "./shared/dropdown.directive";
+
 
 @NgModule({
   imports: [
@@ -18,14 +22,23 @@ import {AdminService} from "./shared/admin.service";
     RouterModule,
     FormsModule,
     AdminRoutingModule
+
+
   ],
-  exports:[CommonModule, FormsModule, AdminAppComponent, AddProductComponent,ProductManagementComponent],
+  exports:[CommonModule, FormsModule,
+    AdminAppComponent,
+    AddProductComponent,
+    ProductManagementComponent,
+    AdminSidebarComponent
+    ],
   declarations: [
     AdminAppComponent,
     ProductManagementComponent,
     AddProductComponent,
-    adminRoutedComponents
-
+    adminRoutedComponents,
+    AdminAppHomeComponent,
+    AdminSidebarComponent,
+    DropdownDirective
   ],
   providers: [AdminService]
 })

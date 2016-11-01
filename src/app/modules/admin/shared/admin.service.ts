@@ -25,10 +25,10 @@ export class AdminService {
   }
 
   //-------Get methods
-  getProducts(categoryName: string): Observable<Product[]> {
-    return this.http.get(`${this.productsApi}/${categoryName}`)
+  getProducts(categoryId: number): Observable<Product[]> {
+    return this.http.get(`${this.categoriesApi}/${categoryId}/products`)
       .map(data => data.json())
-      .do(data => console.log('products : ' + data))
+      .do(data => console.log('products : ' + JSON.stringify( data)))
       .catch(this.HandelError);
   }
 

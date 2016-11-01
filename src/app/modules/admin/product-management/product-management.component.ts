@@ -11,6 +11,7 @@ import {AdminService} from "../shared/admin.service";
 export class ProductManagementComponent implements OnInit {
   products: Product[] = [];
   categories: Category[] = [];
+  selectedCategory : Category;
   errorMessage: string = "";
 
   constructor(private service: AdminService) {
@@ -27,8 +28,18 @@ export class ProductManagementComponent implements OnInit {
   ngOnInit() {
   }
 
+  getProducts(categoryId){
+    console.log("categoryId : " +  categoryId);
+    this.service.getProducts(categoryId)
+      .subscribe(data => this.products = <Product[]>data,
+        error => {
+          this.errorMessage = <any>error;
+          console.log(error);
+        });
+  }
+
   get diagnostic(){
-    return JSON.stringify(this.categories);
+    return JSON.stringify(this.products);
   }
 
 }
