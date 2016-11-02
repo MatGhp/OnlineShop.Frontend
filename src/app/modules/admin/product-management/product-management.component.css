@@ -1,14 +1,31 @@
-img{
-  height:140px;
+img {
+  height: 140px;
   width: 120px;
 }
 
-.product-item{
+.product-item {
   font-family: Ebrima;
   font-weight: bold;
 }
 
-.product-color{
-width:30px;
-  height:30px;
+.product-color {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.product-list-item {
+  border: 1px solid cadetblue;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-shadow: 5px 5px 5px #111;
+  font-family: Ebrima;
+  font-weight: bold;
+
+}
+
+.product-list-item:hover {
+  background-color: aliceblue;
+
+  transform: scale(1.02,1.02);
 }
