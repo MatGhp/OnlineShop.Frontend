@@ -14,7 +14,11 @@ export class ProductManagementComponent implements OnInit {
   selectedCategory : Category;
   errorMessage: string = "";
 
+  id : number;
+
   constructor(private service: AdminService) {
+
+
     service.getCategories()
       .subscribe(
         data => this.categories = <Category[]>data,

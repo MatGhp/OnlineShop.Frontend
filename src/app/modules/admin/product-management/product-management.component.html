@@ -1,6 +1,4 @@
-<os-add-product></os-add-product>
-
-
+<div><a class="btn btn-primary" [routerLink]="['add']">Add New Product</a></div>
 <div class="row">
   <div osDropdown class="col-md-7 col-md-offset-2">
     <div class="form-group">
@@ -46,8 +44,9 @@
     <div class="col-md-2">
       <div></div>
 
-      <div><a class="btn btn-primary">Edit</a></div>
-      <div><a class="btn btn-primary">Reports</a></div>
+      <div><a class="btn btn-primary" [routerLink]="[product.id,'edit']">Edit</a></div>
+      <div><a class="btn btn-primary" [routerLink]="[product.id,'details']">Details</a></div>
+
     </div>
   </div>
 </div>

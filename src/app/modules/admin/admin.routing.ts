@@ -1,25 +1,32 @@
 import {NgModule} from "@angular/core/src/metadata/ng_module";
 import {RouterModule, Routes} from "@angular/router";
-import {AddProductComponent} from "./product-management/add-product.component";
 import {ProductManagementComponent} from "./product-management/product-management.component";
 import {AdminAppComponent} from "./admin-app.component";
 import {AdminAppHomeComponent} from "./admin-app-home.component";
+import {ProductEditComponent} from "./product-management/product-edit.component";
+import {ProductDetailsComponent} from "./product-management/product-details.component";
+import {ProductAddComponent} from "./product-management/product-add.component";
 
-const routes: Routes = [
+
+const ADMIN_ROUTES: Routes = [
   {
     path: 'admin', component: AdminAppComponent,
     children: [
-      {path: 'product-management', component:ProductManagementComponent},
-      {path:'',component: AdminAppHomeComponent}
+      {path: 'products', component: ProductManagementComponent},
+      {path: 'products/add', component: ProductAddComponent},
+      {path: 'products/:id/details', component: ProductDetailsComponent},
+      {path: 'products/:id/edit', component: ProductEditComponent},
+      {path: '', component: AdminAppHomeComponent}
     ]
   }
 ];
 
+
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(ADMIN_ROUTES)],
   exports: [RouterModule]
 })
 export class AdminRoutingModule {
 }
 
-export const adminRoutedComponents = [AddProductComponent, ProductManagementComponent, AdminAppComponent ,AdminAppHomeComponent ];
+export const adminRoutedComponents = [ProductEditComponent, ProductAddComponent, ProductDetailsComponent, ProductManagementComponent, AdminAppComponent, AdminAppHomeComponent];
