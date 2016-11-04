@@ -1,0 +1,88 @@
+<h1>Add new Product</h1>
+<form #f="ngForm" (ngSubmit)="addProduct()">
+  <div class="">
+    <div class="form-group">
+      <label for="name">Product Name</label>
+      <input type="text" id="name" class="form-control" [(ngModel)]="product.name" name="name"
+             required
+             #name="ngModel">
+      <div *ngIf="name.touched && !name.valid">
+        <label class="text-danger" >Name is required</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input type="text"
+             id="description"
+             class="form-control"
+             [(ngModel)]="product.description"
+             name="description"
+             required
+             minlength="4"
+             #description="ngModel">
+      <div *ngIf="description.touched && description.errors">
+        <label class="text-danger" *ngIf="description.errors.required">Description is required</label>
+        <label class="text-danger" *ngIf="description.errors.minlength">Description should be minimum
+          {{description.errors.minlength.requiredLength}}</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" id="price" class="form-control" [(ngModel)]="product.price" name="price"
+             required
+      #price="ngModel">
+      <div *ngIf="price.touched && !price.valid">
+        <label class="text-danger" >Price is required</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="size">Size</label>
+      <input type="text" id="size" class="form-control" [(ngModel)]="product.size" name="size"
+             required
+             #size="ngModel">
+      <div *ngIf="size.touched && !size.valid">
+        <label class="text-danger" >Size is required</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="color">Color</label>
+      <input type="color" id="color" class="form-control" [(ngModel)]="product.color" name="color"
+             required
+             #color="ngModel">
+      <div *ngIf="color.touched && !color.valid">
+        <label class="text-danger" >Color is required</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">Image</label>
+      <input type="text" id="imageUrl" class="form-control" [(ngModel)]="product.imageUrl" name="imageUrl"
+             required
+             #image="ngModel">
+      <div *ngIf="image.touched && !image.valid">
+        <label class="text-danger" >Image is required</label>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <input type="text" id="details" class="form-control" [(ngModel)]="product.details" name="details">
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category </label>
+      <select id="category" class="form-control" [(ngModel)]="product.categoryId" name="category"
+              required
+      #category="ngModel">
+        <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+      </select>
+      <div *ngIf="!category.valid && category.touched">
+        <label class="text-danger">Category is required</label>
+      </div>
+    </div>
+
+
+    <div>
+      <button type="submit" class="btn btn-primary" [disabled]="f.invalid">Submit</button>
+    </div>
+  </div>
+</form>
+

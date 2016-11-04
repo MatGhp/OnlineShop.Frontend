@@ -3,7 +3,7 @@ import {HttpModule} from '@angular/http';
 import {RouterModule} from "@angular/router";
 
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminAppComponent } from './admin-app.component';
 import { ProductManagementComponent } from './product-management/product-management.component';
 import 'rxjs';
@@ -15,6 +15,7 @@ import {DropdownDirective} from "./shared/dropdown.directive";
 import { ProductAddComponent } from './product-management/product-add.component';
 import { ProductEditComponent } from './product-management/product-edit.component';
 import { ProductDetailsComponent } from './product-management/product-details.component';
+import { ImageUploadComponent } from './shared/atomic-components/image-upload.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ProductDetailsComponent } from './product-management/product-details.co
     HttpModule,
     RouterModule,
     FormsModule,
+    ReactiveFormsModule,
     AdminRoutingModule
 
 
@@ -41,7 +43,8 @@ import { ProductDetailsComponent } from './product-management/product-details.co
     DropdownDirective,
     ProductAddComponent,
     ProductEditComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    ImageUploadComponent
   ],
   providers: [AdminService]
 })

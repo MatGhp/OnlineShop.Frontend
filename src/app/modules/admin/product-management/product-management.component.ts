@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Product, Category} from "../shared/models";
 import {AdminService} from "../shared/admin.service";
 
@@ -11,29 +11,32 @@ import {AdminService} from "../shared/admin.service";
 export class ProductManagementComponent implements OnInit {
   products: Product[] = [];
   categories: Category[] = [];
-  selectedCategory : Category;
+  selectedCategory: Category;
   errorMessage: string = "";
 
-  id : number;
+  id: number;
 
   constructor(private service: AdminService) {
+  }
 
 
-    service.getCategories()
+  // onEditInline(id: string) {
+  //   console.log(document.getElementById(id));
+  //   document.getElementById(id).hidden = !document.getElementById(id).hidden;
+  // }
+
+  ngOnInit() {
+    this.service.getCategories()
       .subscribe(
         data => this.categories = <Category[]>data,
         error => {
           this.errorMessage = <any>error;
           console.log(error);
         });
-
   }
 
-  ngOnInit() {
-  }
-
-  getProducts(categoryId){
-    console.log("categoryId : " +  categoryId);
+  getProducts(categoryId) {
+    console.log("categoryId : " + categoryId);
     this.service.getProducts(categoryId)
       .subscribe(data => this.products = <Product[]>data,
         error => {
@@ -42,7 +45,7 @@ export class ProductManagementComponent implements OnInit {
         });
   }
 
-  get diagnostic(){
+  get diagnostic() {
     return JSON.stringify(this.products);
   }
 

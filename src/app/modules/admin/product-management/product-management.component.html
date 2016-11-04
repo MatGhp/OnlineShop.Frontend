@@ -14,7 +14,7 @@
 <hr>
 
 
-<div *ngFor="let product of products" class="product-list-item">
+<div *ngFor="let product of products; let i = index" class="product-list-item">
   <div class="row ">
     <div class="col-md-2">
       <img class="img-responsive img-rounded" src={{product.imageUrl}}/>
@@ -43,11 +43,15 @@
     </div>
     <div class="col-md-2">
       <div></div>
-
-      <div><a class="btn btn-primary" [routerLink]="[product.id,'edit']">Edit</a></div>
+      <!--<div><a class="btn btn-primary" (click)="onEditInline(product.id)" >Edit Inline</a></div>-->
+      <div><a class="btn btn-primary" [routerLink]="[product.id,'edit']" >Edit</a></div>
       <div><a class="btn btn-primary" [routerLink]="[product.id,'details']">Details</a></div>
 
     </div>
+
   </div>
+  <!--<div   id="{{product.id}}"  [hidden]="true">-->
+    <!--<os-product-edit  [product]="product" [categories]="categories" ></os-product-edit>-->
+  <!--</div>-->
 </div>
 

@@ -1,0 +1,83 @@
+<div class="col-md-offset-1">
+  <h1>Edit Product</h1>
+  <form [formGroup]="myForm" (ngSubmit)="addProduct()">
+    <div class="">
+      <div class="form-group">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" class="form-control"
+               formControlName="name">
+        <div *ngIf="myForm.controls.name.errors">
+          <label class="text-danger">Name is required</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text"
+               id="description"
+               class="form-control"
+               formControlName="description">
+        <div *ngIf="myForm.controls.description.errors">
+          <label class="text-danger">Description is required</label>
+
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="text" id="price" class="form-control"
+               formControlName="price">
+        <div *ngIf="myForm.controls.price.errors">
+          <label class="text-danger">Price is required</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="size">Size</label>
+        <input type="text" id="size" class="form-control"
+               formControlName="size">
+        <div *ngIf="myForm.controls.size.errors">
+          <label class="text-danger">Size is required</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="color">Color</label>
+        <input type="color" id="color" class="form-control"
+               formControlName="color">
+        <div *ngIf="myForm.controls.color.errors">
+          <label class="text-danger">Color is required</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">Image</label>
+        <input type="text" id="imageUrl" class="form-control"
+               formControlName="imageUrl">
+        <div *ngIf="myForm.controls.description.errors">
+          <label class="text-danger">Image is required</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="details">Details</label>
+        <input type="text" id="details" class="form-control"
+               formControlName="details">
+      </div>
+
+      <div class="form-group">
+        <label for="category">Category </label>
+        <select id="category" categories class="form-control"
+                formControlName="category">
+          <option *ngFor="let cat of categories" [value]="cat.id"
+          [selected]="cat.id === product.categoryId">{{cat.name}}</option>
+
+        </select>
+        <div *ngIf="myForm.controls.category.errors">
+          <label class="text-danger">Category is required</label>
+        </div>
+      </div>
+
+
+      <div>
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
