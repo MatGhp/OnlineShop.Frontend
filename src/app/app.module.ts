@@ -16,6 +16,7 @@ import {MdCheckboxModule} from "@angular2-material/checkbox";
 import {MdTooltipModule} from "@angular2-material/tooltip";
 import {MdSliderModule} from "@angular2-material/slider";
 import 'hammerjs';
+import {UserModule} from "./modules/user/user.module";
 
 
 
@@ -33,6 +34,7 @@ import 'hammerjs';
     RouterModule,
 
     AdminAppModule,
+    UserModule,
     RouterModule.forRoot([
 
       { path: '', component: AppComponent},
