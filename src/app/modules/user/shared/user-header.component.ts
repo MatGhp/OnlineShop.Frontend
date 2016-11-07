@@ -1,14 +1,14 @@
 import { Component, OnInit,OnDestroy } from '@angular/core';
 import {AuthService} from "./auth.service";
 import {Subscription} from "rxjs";
-
+import {} from '@angular/router';
 @Component({
   selector: 'os-user-header',
   template: `
-   <button >Signin</button>
-    <button >Signup</button>
-    <button >User Profile</button>
-    <button >logout</button>
+   <button [routerLink]="['signin']"  routerlinkactive="active-link" >Signin</button>
+    <button  [routerLink]="['signup']"  routerlinkactive="active-link" >Signup</button>
+    <button *ngIf="isAuthenticated"  [routerLink]="['profile']"  routerlinkactive="active-link" >User Profile</button>
+    <button (click)="onLogout()">logout</button>
   `,
   styles: []
 })

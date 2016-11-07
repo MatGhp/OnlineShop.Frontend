@@ -1,28 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
+import {AuthService} from "../shared/auth.service";
+
 
 @Component({
   selector: 'os-signup',
   template: `
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-10 col-md-offset-2">
         <h3>Please sign up to use all features</h3>
         <form [formGroup]="myForm" (ngSubmit)="onSignup()">
-            <div class="input-group">
+            <div class="input-group form-group">
                 <label for="email">E-Mail</label>
-                <input formControlName="email" type="email" id="email" #email>
+                <input formControlName="email" type="email" id="email" #email class="form-control">
                 <span *ngIf="!email.pristine && email.errors != null && email.errors['noEmail']">Invalid mail address</span>
                 <!--<span *ngIf="email.errors['isTaken']">This username has already been taken</span>-->
             </div>
-            <div class="input-group">
+            <div class="input-group form-group">
                 <label for="password">Password</label>
-                <input formControlName="password" type="password" id="password">
+                <input formControlName="password" type="password" id="password"  class="form-control">
             </div>
             <div class="input-group">
                 <label for="confirm-password">Confirm Password</label>
-                <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword>
+                <input formControlName="confirmPassword" type="password" id="confirm-password" #confirmPassword  class="form-control">
                 <span *ngIf="!confirmPassword.pristine && confirmPassword.errors != null && confirmPassword.errors['passwordsNotMatch']">Passwords do not match</span>
             </div>
-            <button type="submit" [disabled]="!myForm.valid">Sign Up</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Sign Up</button>
         </form>
+        
+</div>
+<div class="col-md-2"></div>
+</div>
+
     `
 })
 export class SignupComponent implements OnInit {
@@ -31,11 +41,11 @@ export class SignupComponent implements OnInit {
   error = false;
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private authService: AuthService) {
   }
 
   onSignup() {
-
+    this.authService.signupUser(this.myForm.value);
   }
 
   ngOnInit(): any {

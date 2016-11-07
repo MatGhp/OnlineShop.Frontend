@@ -7,6 +7,9 @@ import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import {UserRoutingModule, UserRoutedComponents} from "./user.routing";
 import {RouterModule} from "@angular/router";
 import {HttpModule} from "@angular/http";
+import {AuthService} from "./shared/auth.service";
+import {AuthGuard} from "./shared/auth.guard";
+import { UserHeaderComponent } from './shared/user-header.component';
 
 @NgModule({
   imports: [
@@ -18,7 +21,7 @@ import {HttpModule} from "@angular/http";
     UserRoutingModule
   ],
   exports:[UserComponent, UserRoutedComponents],
-  declarations: [UserComponent,UserRoutedComponents],
-  providers:[UserService]
+  declarations: [UserComponent,UserRoutedComponents, UserHeaderComponent],
+  providers:[UserService, AuthService, AuthGuard]
 })
 export class UserModule { }
