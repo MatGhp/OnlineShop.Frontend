@@ -82,5 +82,5 @@
 <button [routerLink]="['signin']"  routerlinkactive="active-link" >Signin</button>
 <button  [routerLink]="['signup']"  routerlinkactive="active-link" >Signup</button>
 <button *ngIf="isAuthenticated"  [routerLink]="['profile']"  routerlinkactive="active-link" >User Profile</button>
-<button (click)="onLogout()">logout</button>
-<button  [routerLink]="['admin']"  routerlinkactive="active-link" >Admin</button>
+<button (click)="onLogout()"  routerlinkactive="active-link" >logout</button>
+<button  *ngIf="isAuthenticated"   [routerLink]="['admin']"  routerlinkactive="active-link" >Admin</button>

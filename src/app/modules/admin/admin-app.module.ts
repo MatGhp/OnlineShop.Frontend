@@ -17,6 +17,8 @@ import { ProductEditComponent } from './product-management/product-edit.componen
 import { ProductDetailsComponent } from './product-management/product-details.component';
 import { ImageUploadComponent } from './shared/atomic-components/image-upload.component';
 import {adminRouting} from "./admin.routing";
+import {AdminAuthGuard} from "./shared/adminAuth.guard";
+import {AuthService} from "../user/shared/auth.service";
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import {adminRouting} from "./admin.routing";
     ProductDetailsComponent,
     ImageUploadComponent
   ],
-  providers: [AdminService]
+  providers: [AdminService,AuthService, AdminAuthGuard]
+
 })
 export class AdminAppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit,OnDestroy , ViewChild} from '@angular/core';
 import {AuthService} from "./auth.service";
 import {Subscription} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'os-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit, OnDestroy  {
 
   isAuthenticated = false;
   private subscription: Subscription;
-  constructor(private authService : AuthService) {
+  constructor(private authService : AuthService, private router : Router ){
     this.subscription = this.authService.isAuthenticated().subscribe(
       authStatus => this.isAuthenticated = authStatus
     );
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit, OnDestroy  {
 
   onLogout(){
     this.authService.signout();
+    this.router.navigate(['/home']);
   }
 
   ngOnInit() {
