@@ -3,11 +3,12 @@ import {SigninComponent} from "./components/signin.component";
 import {SignupComponent} from "./components/signup.component";
 import {ProfileComponent} from "./components/profile.component";
 import {NgModule} from "@angular/core";
+import {AuthGuard} from "./shared/auth.guard";
 
 const USER_ROUTES: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'profile', component: ProfileComponent}
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
 ];
 
 
