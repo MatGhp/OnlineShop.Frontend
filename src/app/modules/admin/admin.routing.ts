@@ -10,7 +10,7 @@ import {ProductAddComponent} from "./product-management/product-add.component";
 
 const ADMIN_ROUTES: Routes = [
   {
-    path: 'admin', component: AdminAppComponent,
+    path: '', component: AdminAppComponent,
     children: [
       {path: 'products', component: ProductManagementComponent},
       {path: 'products/add', component: ProductAddComponent},
@@ -22,11 +22,13 @@ const ADMIN_ROUTES: Routes = [
 ];
 
 
-@NgModule({
-  imports: [RouterModule.forChild(ADMIN_ROUTES)],
-  exports: [RouterModule]
-})
-export class AdminRoutingModule {
-}
+// @NgModule({
+//   imports: [RouterModule.forChild(ADMIN_ROUTES)],
+//   exports: [RouterModule]
+// })
+// export class AdminRoutingModule {
+// }
 
-export const adminRoutedComponents = [ProductEditComponent, ProductAddComponent, ProductDetailsComponent, ProductManagementComponent, AdminAppComponent, AdminAppHomeComponent];
+//export const adminRoutedComponents = [ProductEditComponent, ProductAddComponent, ProductDetailsComponent, ProductManagementComponent, AdminAppComponent, AdminAppHomeComponent];
+
+export const adminRouting = RouterModule.forChild(ADMIN_ROUTES);
