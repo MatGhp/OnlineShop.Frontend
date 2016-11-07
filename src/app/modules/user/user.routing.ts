@@ -1,4 +1,5 @@
 import {Routes, RouterModule} from "@angular/router";
+import {HeaderComponent} from './shared/header.component';
 import {SigninComponent} from "./components/signin.component";
 import {SignupComponent} from "./components/signup.component";
 import {ProfileComponent} from "./components/profile.component";
@@ -23,6 +24,7 @@ export class UserRoutingModule {
 }
 
 export const UserRoutedComponents = [
+  HeaderComponent,
   SigninComponent,
   SignupComponent,
   ProfileComponent

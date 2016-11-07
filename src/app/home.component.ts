@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'os-home',
   template: `
-  <hi>Home Page goes here...!</hi>
+  <h1>Home Page goes here...!</h1>
 `,
   styles: [``]
 })

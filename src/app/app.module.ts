@@ -5,9 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header.component';
 
-import {AdminAppModule} from './modules/admin/admin-app.module';
+
 import {MdCoreModule} from "@angular2-material/core";
 import {MdCardModule} from "@angular2-material/card";
 import {MdButtonModule} from "@angular2-material/button";
@@ -16,7 +15,11 @@ import {MdCheckboxModule} from "@angular2-material/checkbox";
 import {MdTooltipModule} from "@angular2-material/tooltip";
 import {MdSliderModule} from "@angular2-material/slider";
 import 'hammerjs';
+// Eager load these Modules
 import {UserModule} from "./modules/user/user.module";
+import {HomeComponent} from "./home.component";
+//TODO : Lazy Load these Modules :
+
 
 
 
@@ -24,7 +27,8 @@ import {UserModule} from "./modules/user/user.module";
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HomeComponent
+
 
   ],
   imports: [
@@ -33,12 +37,12 @@ import {UserModule} from "./modules/user/user.module";
     HttpModule,
     RouterModule,
 
-    AdminAppModule,
     UserModule,
     RouterModule.forRoot([
-
-      { path: '', component: AppComponent},
-      { path: '**', component: AppComponent }
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'admin', loadChildren:'app/modules/admin/admin-app.module#AdminAppModule'},
+      { path: '**', redirectTo: 'home' }
     ]),
 
     MdCoreModule, MdCardModule, MdButtonModule, MdRadioModule,
