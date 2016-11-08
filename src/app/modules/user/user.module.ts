@@ -1,7 +1,7 @@
 ///<reference path="../../../../node_modules/@angular/common/src/common_module.d.ts"/>
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { UserComponent } from './user.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {UserComponent} from './user.component';
 import {UserService} from "./shared/user.service";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import {UserRoutingModule, UserRoutedComponents} from "./user.routing";
@@ -20,8 +20,9 @@ import {HeaderComponent} from "./shared/header.component";
     ReactiveFormsModule,
     UserRoutingModule
   ],
-  exports:[UserComponent,HeaderComponent, UserRoutedComponents],
-  declarations: [UserComponent,UserRoutedComponents, UserRoutedComponents],
-  providers:[UserService, AuthService, AuthGuard]
+  exports: [UserComponent, HeaderComponent, UserRoutedComponents],
+  declarations: [UserComponent, UserRoutedComponents, UserRoutedComponents],
+  providers: [UserService, AuthService, AuthGuard]
 })
-export class UserModule { }
+export class UserModule {
+}
