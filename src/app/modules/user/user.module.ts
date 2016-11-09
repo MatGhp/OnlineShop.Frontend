@@ -11,6 +11,7 @@ import {HttpModule} from "@angular/http";
 import {AuthService} from "./shared/auth.service";
 import {AuthGuard} from "./shared/auth.guard";
 import {HeaderComponent} from "./shared/header.component";
+import { SettingsComponent } from './shared/settings.component';
 
 @NgModule({
   imports: [
@@ -22,8 +23,9 @@ import {HeaderComponent} from "./shared/header.component";
     ReactiveFormsModule,
     UserRoutingModule
   ],
+  entryComponents: [SettingsComponent,HeaderComponent],
   exports: [UserComponent, HeaderComponent, UserRoutedComponents],
-  declarations: [UserComponent, UserRoutedComponents, UserRoutedComponents],
+  declarations: [UserComponent, UserRoutedComponents, UserRoutedComponents, SettingsComponent],
   providers: [UserService, AuthService, AuthGuard]
 })
 export class UserModule {

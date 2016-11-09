@@ -1,11 +1,48 @@
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+@import '~https://fonts.googleapis.com/icon?family=Material+Icons';
+
 body {
-  background-color: #f8f8f8;
-  font-family: 'Muli', sans-serif;
-  padding: 0;
   margin: 0;
+  font-family: Roboto, sans-serif;
+}
+.icon-20{
+  font-size: 20px;
 }
 
-.sebm-google-map-container {
-  width: 450px;
-  height: 450px;
+md-sidenav-layout {
+  height: 100vh;
+}
+
+md-sidenav {
+  width: 320px;
+}
+
+
+md-toolbar-row {
+  justify-content: space-between;
+}
+
+p {
+  margin: 16px;
+}
+
+
+
+[md-raised-button] {
+  width: 100%;
+}
+
+md-grid-list {
+  max-width: 1403px;
+  margin: 16px;
+}
+
+
+.icon-20 {
+  font-size: 20px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

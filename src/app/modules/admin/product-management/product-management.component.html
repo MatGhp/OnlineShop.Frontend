@@ -13,45 +13,80 @@
 </div>
 <hr>
 
+<md-grid-list cols="1" rowHeight="100px" [style.background]="'lightblue'">
 
-<div *ngFor="let product of products; let i = index" class="product-list-item">
-  <div class="row ">
-    <div class="col-md-2">
-      <img class="img-responsive img-rounded" src={{product.imageUrl}}/>
-    </div>
-    <div class="col-md-4">
-      <div>
-        <span class="product-item">{{product.name}}</span>
+  <md-grid-tile *ngFor="let product of products; let i = index">
+    <md-grid-list cols="4">
+      <md-grid-tile>
+        <img class="img-responsive img-rounded" src={{product.imageUrl}}/>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div>
+          <span class="product-item">{{product.name}}</span>
 
-        <div class="product-item">{{product.price}} €</div>
-        <div [ngStyle]="{'background': product.color}" class="product-color"></div>
-      </div>
-      <div>
-        Size : {{product.size}}
-      </div>
-      <div>
-        {{product.description}}
-      </div>
-      <div> {{product.details}}
+          <div class="product-item">{{product.price}} €</div>
+          <div [ngStyle]="{'background': product.color}" class="product-color"></div>
+        </div>
+        <div>
+          Size : {{product.size}}
+        </div>
+        <div>
+          {{product.description}}
+        </div>
+        <div> {{product.details}}
 
-      </div>
-    </div>
-    <div class="col-md-4">
-      <div>Orders: 000 </div>
-      <div>Shipments: 000 </div>
-      <div>Remains:  000</div>
-    </div>
-    <div class="col-md-2">
-      <div></div>
-      <!--<div><a class="btn btn-primary" (click)="onEditInline(product.id)" >Edit Inline</a></div>-->
-      <div><a class="btn btn-primary" [routerLink]="[product.id,'edit']" >Edit</a></div>
-      <div><a class="btn btn-primary" [routerLink]="[product.id,'details']">Details</a></div>
+        </div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <div>Orders: 000</div>
+        <div>Shipments: 000</div>
+        <div>Remains: 000</div>
+      </md-grid-tile>
+      <md-grid-tile>
+        <!--<div><a class="btn btn-primary" (click)="onEditInline(product.id)" >Edit Inline</a></div>-->
+        <div><a class="btn btn-primary" [routerLink]="[product.id,'edit']">Edit</a></div>
+        <div><a class="btn btn-primary" [routerLink]="[product.id,'details']">Details</a></div>
+      </md-grid-tile>
+    </md-grid-list>
+  </md-grid-tile>
 
-    </div>
+</md-grid-list>
 
-  </div>
-  <!--<div   id="{{product.id}}"  [hidden]="true">-->
-    <!--<os-product-edit  [product]="product" [categories]="categories" ></os-product-edit>-->
-  <!--</div>-->
-</div>
+<!--<div *ngFor="let product of products; let i = index" class="product-list-item">-->
+<!--<div class="row ">-->
+<!--<div class="col-md-2">-->
+<!--<img class="img-responsive img-rounded" src={{product.imageUrl}}/>-->
+<!--</div>-->
+<!--<div class="col-md-4">-->
+<!--<div>-->
+<!--<span class="product-item">{{product.name}}</span>-->
 
+<!--<div class="product-item">{{product.price}} €</div>-->
+<!--<div [ngStyle]="{'background': product.color}" class="product-color"></div>-->
+<!--</div>-->
+<!--<div>-->
+<!--Size : {{product.size}}-->
+<!--</div>-->
+<!--<div>-->
+<!--{{product.description}}-->
+<!--</div>-->
+<!--<div> {{product.details}}-->
+
+<!--</div>-->
+<!--</div>-->
+<!--<div class="col-md-4">-->
+<!--<div>Orders: 000 </div>-->
+<!--<div>Shipments: 000 </div>-->
+<!--<div>Remains:  000</div>-->
+<!--</div>-->
+<!--<div class="col-md-2">-->
+<!--<div></div>-->
+<!--&lt;!&ndash;<div><a class="btn btn-primary" (click)="onEditInline(product.id)" >Edit Inline</a></div>&ndash;&gt;-->
+<!--<div><a class="btn btn-primary" [routerLink]="[product.id,'edit']" >Edit</a></div>-->
+<!--<div><a class="btn btn-primary" [routerLink]="[product.id,'details']">Details</a></div>-->
+
+<!--</div>-->
+
+<!--</div>-->
+<!--&lt;!&ndash;<div   id="{{product.id}}"  [hidden]="true">&ndash;&gt;-->
+<!--&lt;!&ndash;<os-product-edit  [product]="product" [categories]="categories" ></os-product-edit>&ndash;&gt;-->

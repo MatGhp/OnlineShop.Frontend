@@ -1,13 +1,28 @@
-<md-toolbar color="primary">
-  <a [routerLink]="['/']" class="toolbar-title"><md-icon >pets</md-icon>Online Shop</a>
-  <span class="fill-remaining-space"></span>
-  <button md-button class="md-primary"  [routerLink]="['signin']"  routerlinkactive="active-link" >Signin</button>
-  <button  md-button class="md-primary"   [routerLink]="['signup']"  routerlinkactive="active-link" >Signup</button>
-  <button  md-button class="md-primary"  *ngIf="isAuthenticated"  [routerLink]="['profile']"  routerlinkactive="active-link" >User Profile</button>
-  <button  md-button class="md-primary"  (click)="onLogout()"  routerlinkactive="active-link" >logout</button>
-  <button   md-button class="md-primary"  *ngIf="isAuthenticated"   [routerLink]="['admin']"  routerlinkactive="active-link" >Admin</button>
-  <button md-icon-button >
-    <md-icon>More...</md-icon>
-  </button>
-</md-toolbar>
+<div [class.dark-theme]="isDarkTheme">
+  <md-toolbar color="primary">
+    <span>
+    <a [routerLink]="['/']" class="toolbar-title">
+      <md-icon class="icon-20">pets</md-icon>Online Shop</a>
+    </span>
 
+
+    <button md-icon-button [md-menu-trigger-for]="menu">
+      <md-icon>more_vert</md-icon>
+    </button>
+  </md-toolbar>
+  <md-menu x-position="before" #menu="mdMenu">
+    <button md-menu-item (click)="openDialog()">Setting</button>
+    <button md-menu-item (click)="onChangeTheme()">Toggle theme</button>
+    <button md-menu-item>Help</button>
+  </md-menu>
+  <hr>
+  <button md-button class="md-primary" [routerLink]="['signin']" routerlinkactive="active-link">Signin</button>
+  <button md-button class="md-primary" [routerLink]="['signup']" routerlinkactive="active-link">Signup</button>
+  <button md-button class="md-primary" *ngIf="isAuthenticated" [routerLink]="['profile']"
+          routerlinkactive="active-link">User Profile
+  </button>
+  <button md-button class="md-primary" (click)="onLogout()" routerlinkactive="active-link">logout</button>
+  <button md-button class="md-primary" *ngIf="isAuthenticated" [routerLink]="['admin']"
+          routerlinkactive="active-link">Admin
+  </button>
+</div>
