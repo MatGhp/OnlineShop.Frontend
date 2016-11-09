@@ -2,11 +2,12 @@ import { Component, OnInit,OnDestroy , ViewChild} from '@angular/core';
 import {AuthService} from "./auth.service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
+import {MdButton} from '@angular/material';
 
 @Component({
   selector: 'os-header',
   templateUrl: 'header.component.html',
-  styles: [`#login-nav input { margin-bottom: 15px;`]
+  styles: ['header.component.css']
 })
 export class HeaderComponent implements OnInit, OnDestroy  {
   @ViewChild('InputForm') inputForm: HTMLFormElement;

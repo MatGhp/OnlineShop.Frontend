@@ -19,6 +19,7 @@ import { ImageUploadComponent } from './shared/atomic-components/image-upload.co
 import {adminRouting} from "./admin.routing";
 import {AdminAuthGuard} from "./shared/adminAuth.guard";
 import {AuthService} from "../user/shared/auth.service";
+import {MaterialModule} from "@angular/material";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {AuthService} from "../user/shared/auth.service";
     CommonModule,
     HttpModule,
     RouterModule,
+    MaterialModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
     adminRouting
