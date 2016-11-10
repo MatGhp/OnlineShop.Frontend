@@ -6,14 +6,7 @@ import {NgForm} from "@angular/forms";
 @Component({
   selector: 'os-product-add',
   templateUrl: 'product-add.component.html',
-  styles: [`
-.form-control{
-max-width: 300px;
-}
-.invalid-message{
-color:red;
-}
-`]
+  styles: [``]
 })
 export class ProductAddComponent implements OnInit {
 

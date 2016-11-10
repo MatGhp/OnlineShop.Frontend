@@ -1,94 +1,103 @@
-<md-card class="demo-card demo-basic">
-  <md-toolbar color="primary">Add new product</md-toolbar>
-  <md-card-content>
-    <form #f="ngForm" (ngSubmit)="addProduct()">
-      <div class="">
+<h1>Add new product</h1>
+<md-card>
+  <md-card-title>New Product</md-card-title>
 
-        <div>
-          <md-input dividerColor="primary" [(ngModel)]="product.name" name="name" required
-                    #name="ngModel" placeholder="Product Name"></md-input>
-          <div *ngIf="name.touched && !name.valid">
-            <label class="text-danger">Name is required</label>
-          </div>
-        </div>
-        <div>
-          <md-input dividerColor="primary" [(ngModel)]="product.description"
-                       placeholder="Description - min length (10)"
-                       name="description"
-                       required
-                       minlength="10"
-                       #description="ngModel">
-            <md-hint align="end">{{description.length}} / 10</md-hint>
-            <!--<md-hint align="end" *ngIf="description.touched && description.errors">-->
-            <!--<label class="text-danger" *ngIf="description.errors.required">Description is required</label>-->
-            <!--<label class="text-danger" *ngIf="description.errors.minlength">Description should be minimum-->
-            <!--{{description.errors.minlength.requiredLength}}</label>-->
-            <!--</md-hint>-->
-          </md-input>
-          <div *ngIf="description.touched && description.errors">
-            <label class="text-danger" *ngIf="description.errors.required">Description is required</label>
-            <label class="text-danger" *ngIf="description.errors.minlength">Description should be minimum
-              {{description.errors.minlength.requiredLength}}</label>
-          </div>
-        </div>
-        <div>
+  <form #f="ngForm" (ngSubmit)="addProduct()">
+    <div class="">
 
-          <md-input [(ngModel)]="product.price" name="price"
-                    required
-                    #price="ngModel" placeholder="Price" align="end">
-            <span md-prefix>$</span>
-            <span md-suffix>.00</span>
-          </md-input>
-          <div *ngIf="price.touched && !price.valid">
-            <label class="text-danger">Price is required</label>
-          </div>
-        </div>
-        <div>
-          <md-input [(ngModel)]="product.size" name="size"
-                    required
-                    #size="ngModel" placeholder="Size"></md-input>
-          <div *ngIf="size.touched && !size.valid">
-            <label class="text-danger">Size is required</label>
-          </div>
-        </div>
-        <div>
-          <md-input [(ngModel)]="product.color" color name="color"
-                    required
-                    #color="ngModel" placeholder="Color"></md-input>
-          <div *ngIf="color.touched && !color.valid">
-            <label class="text-danger">Color is required</label>
-          </div>
-        </div>
-        <div>
-          <md-input [(ngModel)]="product.imageUrl" name="imageUrl"
-                    required
-                    #image="ngModel" placeholder="Image Url"></md-input>
-          <div *ngIf="image.touched && !image.valid">
-            <label class="text-danger">Image is required</label>
-          </div>
-        </div>
-        <div>
-
-          <md-input [(ngModel)]="product.details" name="details" placeholder="Details"></md-input>
-        </div>
-
-        <div class="form-group">
-          <label for="category">Category </label>
-          <select id="category" class="form-control" [(ngModel)]="product.categoryId" name="category"
-                  required
-                  #category="ngModel">
-            <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
-          </select>
-          <div *ngIf="!category.valid && category.touched">
-            <label class="text-danger">Category is required</label>
-          </div>
-        </div>
-
-
-        <div>
-          <button md-button type="submit" class="md-primary" [disabled]="f.invalid">Submit</button>
+      <div >
+        <md-input dividerColor="primary" [(ngModel)]="product.name" name="name" required
+                  #name="ngModel" placeholder="Product Name"></md-input>
+        <div *ngIf="name.touched && !name.valid">
+          <label class="text-danger">Name is required</label>
         </div>
       </div>
-    </form>
-  </md-card-content>
+    <div>
+
+        <md-input dividerColor="primary" [(ngModel)]="product.description"
+                  placeholder="Description - min length (10)"
+                  name="description"
+                  required
+                  minlength="10"
+                  #description="ngModel">
+          <md-hint align="end">{{description.length}} / 10</md-hint>
+          <!--<md-hint align="end" *ngIf="description.touched && description.errors">-->
+          <!--<label class="text-danger" *ngIf="description.errors.required">Description is required</label>-->
+          <!--<label class="text-danger" *ngIf="description.errors.minlength">Description should be minimum-->
+          <!--{{description.errors.minlength.requiredLength}}</label>-->
+          <!--</md-hint>-->
+        </md-input>
+        <div *ngIf="description.touched && description.errors">
+          <label class="text-danger" *ngIf="description.errors.required">Description is required</label>
+          <label class="text-danger" *ngIf="description.errors.minlength">Description should be minimum
+            {{description.errors.minlength.requiredLength}}</label>
+        </div>
+      </div>
+      <div  class="flex align-center">
+
+        <md-input [(ngModel)]="product.price" name="price"
+                  required
+                  #price="ngModel" placeholder="Price" align="end">
+          <span md-prefix>$</span>
+          <span md-suffix>.00</span>
+        </md-input>
+        <div *ngIf="price.touched && !price.valid">
+          <label class="text-danger">Price is required</label>
+        </div>
+      </div>
+      <div>
+        <md-input [(ngModel)]="product.size" name="size"
+                  required
+                  #size="ngModel" placeholder="Size"></md-input>
+        <div *ngIf="size.touched && !size.valid">
+          <label class="text-danger">Size is required</label>
+        </div>
+      </div>
+      <div>
+        <md-input [(ngModel)]="product.color" color name="color"
+                  required
+                  #color="ngModel" placeholder="Color"></md-input>
+        <div *ngIf="color.touched && !color.valid">
+          <label class="text-danger">Color is required</label>
+        </div>
+      </div>
+      <div>
+        <md-input [(ngModel)]="product.imageUrl" name="imageUrl"
+                  required
+                  #image="ngModel" placeholder="Image Url"></md-input>
+        <div *ngIf="image.touched && !image.valid">
+          <label class="text-danger">Image is required</label>
+        </div>
+      </div>
+      <div>
+
+        <md-input [(ngModel)]="product.details" name="details" placeholder="Details"></md-input>
+      </div>
+
+      <div>
+        <select  class="flex-one" [(ngModel)]="product.categoryId" name="category"
+                required
+                #category="ngModel">
+          <option disabled>Select one category...</option>
+          <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+        </select>
+        <div *ngIf="!category.valid && category.touched">
+          <label class="text-danger">Category is required</label>
+        </div>
+      </div>
+      <md-card-actions align="end">
+        <button md-button type="submit" [disabled]="f.invalid">Submit</button>
+
+      </md-card-actions>
+      <div>
+
+      </div>
+    </div>
+  </form>
+
+</md-card>
+<md-card>
+  <p>Form: {{f.value | json}}</p>
+  <p>Form Status: {{f.control.stattus}}</p>
+  <p>New Product Error : {{product.control?.error | json}}</p>
 </md-card>
