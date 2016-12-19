@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from '@angular/material';
 import 'hammerjs';
 // Eager load these Modules
-import {UserModule} from "./modules/user/user.module";
+import {UserModule} from "./modules/userprofile/user.module";
 import {HomeComponent} from "./home.component";
 import { DoublePipe } from './shared/double.pipe';
 //TODO : Lazy Load these Modules :
