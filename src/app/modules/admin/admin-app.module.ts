@@ -18,8 +18,9 @@ import { ProductDetailsComponent } from './product-management/product-details.co
 import { ImageUploadComponent } from './shared/atomic-components/image-upload.component';
 import {adminRouting} from "./admin.routing";
 import {AdminAuthGuard} from "./shared/adminAuth.guard";
-import {AuthService} from "../user/shared/auth.service";
+import {AuthService} from "../userprofile/shared/auth.service";
 import {MaterialModule} from "@angular/material";
+import { ListUsersComponent } from './user-management/list-users.component';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {MaterialModule} from "@angular/material";
     ProductAddComponent,
     ProductEditComponent,
     ProductDetailsComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    ListUsersComponent
   ],
   providers: [AdminService,AuthService, AdminAuthGuard]
 
