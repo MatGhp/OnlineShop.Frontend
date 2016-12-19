@@ -45,12 +45,12 @@ export class AuthService {
       }
     );
     return subject.asObservable();
-    // var user = firebase.auth().currentUser;
+    // var userprofile = firebase.auth().currentUser;
     //
-    // if (user) {
+    // if (userprofile) {
     //   console.log(' User is signed in');
     // } else {
-    //   console.log('No user is signed in');
+    //   console.log('No userprofile is signed in');
     // }
   }
   signout(){
