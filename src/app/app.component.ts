@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AngularFire} from "angularfire2";
 
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(af: AngularFire)
+  {
+    console.log(af);
+  }
 }
