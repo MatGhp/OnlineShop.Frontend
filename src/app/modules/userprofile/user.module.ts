@@ -1,8 +1,6 @@
-///<reference path="../../../../node_modules/@angular/common/src/common_module.d.ts"/>
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {UserComponent} from './user.component';
-import {MaterialModule} from "@angular/material";
 import {UserService} from "./shared/user.service";
 import {ReactiveFormsModule, FormsModule} from "@angular/forms";
 import {UserRoutingModule, UserRoutedComponents} from "./user.routing";
@@ -16,7 +14,7 @@ import { SettingsComponent } from './shared/settings.component';
 @NgModule({
   imports: [
     CommonModule,
-    MaterialModule.forRoot(),
+
     HttpModule,
     RouterModule,
     FormsModule,

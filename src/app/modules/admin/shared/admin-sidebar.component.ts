@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'os-admin-sidebar',
-  templateUrl: 'admin-sidebar.component.html',
+  template: ``,
   styles: [`
 body{margin-top:50px;}
 .glyphicon { margin-right:10px; }

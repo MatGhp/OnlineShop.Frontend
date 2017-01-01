@@ -4,7 +4,7 @@ import {Product, Category} from "../shared/models";
 
 @Component({
   selector: 'os-product-edit',
-  templateUrl: 'product-edit.component.html',
+  templateUrl: './product-edit.component.html',
   styles: [`
 .form-control{
 max-width: 300px;
@@ -31,7 +31,6 @@ export class ProductEditComponent implements OnInit  {
 
 
   ngOnInit () {
-    console.log('selected category : :  ' + this.product.category);
     this.myForm = this.formBuilder.group({
       name: [this.product.name, [Validators.required, Validators.minLength(1)]],
       price: [this.product.price, Validators.required],
@@ -39,8 +38,8 @@ export class ProductEditComponent implements OnInit  {
       size: [this.product.size, Validators.required],
       imageUrl: [this.product.imageUrl, Validators.required],
       description: [this.product.description],
-      details: [this.product.details],
-      category: [this.product.categoryId, Validators.required]
+      details: [this.product.details]
+
     });
   }
 }

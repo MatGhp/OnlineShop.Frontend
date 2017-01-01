@@ -1,5 +1,4 @@
 import { Component, OnInit, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
-import {MdSidenav, MdDialog, MdDialogConfig} from "@angular/material";
 
 import {UserProfile} from "../../admin/shared/models";
 import {AuthService} from "../shared/auth.service";

@@ -6,8 +6,7 @@ import {RouterModule}   from '@angular/router';
 
 import {AppComponent} from './app.component';
 
-import {MaterialModule} from '@angular/material';
-import 'hammerjs';
+
 // Eager load these Modules
 import {UserModule} from "./modules/userprofile/user.module";
 import {HomeComponent} from "./home.component";
@@ -35,7 +34,7 @@ export const firebaseconfig = {
   ],
   imports: [
     BrowserModule,
-    MaterialModule.forRoot(),
+
     FormsModule,
     HttpModule,
     RouterModule,

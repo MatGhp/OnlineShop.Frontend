@@ -1,28 +1,28 @@
-<div>
-  <md-sidenav-layout>
-    <md-sidenav align="end" mode="side" opened #sidenav>
-      <md-tab-group>
-        <md-tab>
-          <template md-tab-label>Products</template>
-          <template md-tab-content>
-            <a [routerLink]="['products']" routerlinkactive="active-link" >Categories</a>
-            <hr>
-            <a [routerLink]="['products']" routerlinkactive="active-link" >Products</a>
-          </template>
-        </md-tab>
-        <md-tab>
-          <template md-tab-label>Users</template>
-          <template md-tab-content>
-            <a [routerLink]="['users']" routerlinkactive="active-link" >User list</a>
-            <hr>
-            <button md-raised-button (click)="sidenav.close()" color="ancent">CLOSE</button>
-          </template>
-        </md-tab>
+<!--<div>-->
+  <!--<md-sidenav-layout>-->
+    <!--<md-sidenav align="end" mode="side" opened #sidenav>-->
+      <!--<md-tab-group>-->
+        <!--<md-tab>-->
+          <!--<template md-tab-label>Products</template>-->
+          <!--<template md-tab-content>-->
+            <!--<a [routerLink]="['products']" routerlinkactive="active-link" >Categories</a>-->
+            <!--<hr>-->
+            <!--<a [routerLink]="['products']" routerlinkactive="active-link" >Products</a>-->
+          <!--</template>-->
+        <!--</md-tab>-->
+        <!--<md-tab>-->
+          <!--<template md-tab-label>Users</template>-->
+          <!--<template md-tab-content>-->
+            <!--<a [routerLink]="['users']" routerlinkactive="active-link" >User list</a>-->
+            <!--<hr>-->
+            <!--<button md-raised-button (click)="sidenav.close()" color="ancent">CLOSE</button>-->
+          <!--</template>-->
+        <!--</md-tab>-->
 
-      </md-tab-group>
-    </md-sidenav>
-  </md-sidenav-layout>
-</div>
+      <!--</md-tab-group>-->
+    <!--</md-sidenav>-->
+  <!--</md-sidenav-layout>-->
+<!--</div>-->
 <!--<div>-->
   <!--<md-sidenav-layout>-->
     <!--<md-sidenav #start (open)="closeStartButton.focus()">-->

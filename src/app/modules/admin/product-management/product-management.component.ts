@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Product, Category} from "../shared/models";
 import {AdminService} from "../shared/admin.service";
+import {AdminProductService} from "../shared/admin-product.service";
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ProductManagementComponent implements OnInit {
 
   id: number;
 
-  constructor(private service: AdminService) {
+  constructor(private service: AdminProductService) {
   }
 
 
@@ -26,23 +27,35 @@ export class ProductManagementComponent implements OnInit {
   // }
 
   ngOnInit() {
-    this.service.getCategories()
-      .subscribe(
-        data => this.categories = <Category[]>data,
-        error => {
-          this.errorMessage = <any>error;
-          console.log(error);
-        });
+    this.service.getProducts()
+      .subscribe(p => {
+            this.products = p;
+      });
+    // this.service.getProducts()
+    //   .subscribe(p => {
+    //     this.products = p;
+    //     console.log(this.products);
+    //     console.log(p);
+    //
+    //   });
+    // this.service.getCategories()
+    //   .subscribe(
+    //     data => this.categories = <Category[]>data,
+    //     error => {
+    //       this.errorMessage = <any>error;
+    //       console.log(error);
+    //     });
   }
 
-  getProducts(categoryId) {
-    console.log("categoryId : " + categoryId);
-    this.service.getProducts(categoryId)
-      .subscribe(data => this.products = <Product[]>data,
-        error => {
-          this.errorMessage = <any>error;
-          console.log(error);
-        });
+  getProducts() {
+    //console.log("categoryId : " + categoryId);
+    this.service.getProducts()
+      .subscribe(p => this.products = <Product[]>p);
+    // .subscribe(data => this.products = <Product[]>data,
+    //   error => {
+    //     this.errorMessage = <any>error;
+    //     console.log(error);
+    //   });
   }
 
   get diagnostic() {

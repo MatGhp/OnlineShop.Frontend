@@ -11,8 +11,13 @@ form {
   justify-content: center;
 }
 
-md-card {
-  width: 500px;
+.product-form {
+  width: 350px;
+}
+
+
+.field-error-message {
+  padding-right: 20px;
 }
 
 .flex {
@@ -31,17 +36,10 @@ md-card {
   justify-content: center;
 }
 
-md-input {
-  width: 100%;
-}
-
-md-input, label, select {
+label, select {
   margin-right: 8px;
 }
 
-md-input:last-child {
-  margin-right: 0;
-}
 
 .flex-one {
   flex-grow: 1;

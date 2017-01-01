@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminAppComponent } from './admin-app.component';
 import { ProductManagementComponent } from './product-management/product-management.component';
 import 'rxjs';
+
 //import {AdminRoutingModule, adminRoutedComponents} from "./admin.routing";
 import {AdminService} from "./shared/admin.service";
 import {AdminAppHomeComponent} from "./admin-app-home.component";
@@ -19,8 +20,8 @@ import { ImageUploadComponent } from './shared/atomic-components/image-upload.co
 import {adminRouting} from "./admin.routing";
 import {AdminAuthGuard} from "./shared/adminAuth.guard";
 import {AuthService} from "../userprofile/shared/auth.service";
-import {MaterialModule} from "@angular/material";
 import { ListUsersComponent } from './user-management/list-users.component';
+import {AdminProductService} from "./shared/admin-product.service";
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { ListUsersComponent } from './user-management/list-users.component';
     CommonModule,
     HttpModule,
     RouterModule,
-    MaterialModule.forRoot(),
+
     FormsModule,
     ReactiveFormsModule,
     adminRouting
@@ -46,7 +47,7 @@ import { ListUsersComponent } from './user-management/list-users.component';
     ImageUploadComponent,
     ListUsersComponent
   ],
-  providers: [AdminService,AuthService, AdminAuthGuard]
+  providers: [AdminService, AdminProductService ,AuthService, AdminAuthGuard]
 
 })
 export class AdminAppModule { }
