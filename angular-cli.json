@@ -1,7 +1,7 @@
 {
   "project": {
-    "version": "1.0.0-beta.19-3",
-    "name": "online-shop"
+    "version": "1.0.0-beta.24",
+    "name": "OnlineShop"
   },
   "apps": [
     {
@@ -15,21 +15,12 @@
       "main": "main.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
-      "prefix": "os",
+      "prefix": "app",
       "mobile": false,
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../node_modules/@angular2-material/core/overlay/overlay.css",
-        "styles.css",
-        "theme.scss"
-
+        "styles.css"
       ],
-      "scripts": [
-
-        "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
-      "../node_modules/hammerjs/hammer.min.js"
-      ],
+      "scripts": [],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
